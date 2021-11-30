@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import googleMap from "./googleMap";
+import GoogleMap from "./googleMap";
 // import { Icon, trash } from "react";
 // import "";
 const getDatafromLS = () => {
@@ -95,8 +95,11 @@ export const ViewData = () => {
                     <span className="mx-2">{doc.budget}</span>
                   </li>
                 </ul>
-                
-                
+                <GoogleMap
+                  isActive={"map-container"}
+                  mapAddress={doc.address}
+                />
+
                 {/* <td>
                           <button
                             onClick={() => deleteData(data.isbn)}

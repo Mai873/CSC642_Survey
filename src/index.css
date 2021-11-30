@@ -10,4 +10,10 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+    
+}
+.map-container {
+  position: absolute;
+  width: 48% !important;
+  height: 100% !important;
 }
