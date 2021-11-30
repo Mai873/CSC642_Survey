@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { View, ViewData } from "./ViewData";
 import Recaptcha from "react-google-recaptcha";
-import googleMap from "./googleMap";
-
+import GoogleMap from "./googleMap";
+// import { Link } from "react-router-dom";
+// import "";
 
 const getDatafromLS = () => {
   const doc = localStorage.getItem("data");
@@ -49,7 +50,15 @@ export const DataSurveyForm = () => {
     setBudget(event.target.value);
   };
 
-  
+  // useEffect(() => {
+  //   // storing input name
+  //   // console.log(errors, "llllllll");
+  //   if (Object.keys(errors).length === 0 && isSubmit) {
+  //     // alert("You have successfully subscribed!");
+  //     console.log(data, "hi data");
+  //     // setIsSubmit(true);
+  //   }
+  // }, [errors]);
 
   const validate = (values) => {
     const error = {};
@@ -83,7 +92,7 @@ export const DataSurveyForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-   
+    // const { name, value } = e.target;
 
     let val = {
       isbn,
@@ -104,16 +113,31 @@ export const DataSurveyForm = () => {
     setData([...data, val]);
 
     setIsSubmit(true);
-    
+    // setErrors({});
 
-
+    // setFname("");
+    // setlname("");
+    // setEmail("");
+    // setContact("");
+    // setInches("");
+    // setFeet("");
+    // setAddress("");
+    // setTitle("");
+    // setServices("");
+    // setBudget("");
+    // setErrors({});
   };
 
   useEffect(() => {
-    
+    // storing input name
+    // console.log(errors, "llllllll");
+    // if (Object.getOwnPropertyNames(errors).length === 0 && isSubmit) {
     localStorage.setItem("data", JSON.stringify(data));
     setErrors({});
-    
+    // alert("You have successfully subscribed!");
+    // console.log(data, "hi data");
+    // setIsSubmit(true);
+    // }
   }, [data]);
 
   function getStorageValue(key, defaultValue) {}
@@ -195,7 +219,8 @@ export const DataSurveyForm = () => {
                   id="exampleFormControlInput1"
                   value={contact}
                   onChange={(e) => setContact(e.target.value)}
-                 
+                  //   placeholder="123-45-678"
+                  //   pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
                   required
                 />
                 <p style={{ color: "red" }}>{errors.contact}</p>
@@ -357,9 +382,7 @@ export const DataSurveyForm = () => {
                 verifyCallback={verifyCallback}
               />
             </div>
-            <input type="submit" className="btn btn-primary my-2" 
-            onClick={() => window.location.reload()}/>
-            
+            <input type="submit" className="btn btn-primary my-2" />
             {/* <a className="btn btn-outline-primary mx-2">View Data</a> */}
             <button
               type="button"
