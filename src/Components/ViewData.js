@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import googleMap from "./googleMap";
 // import { Icon, trash } from "react";
 // import "";
 const getDatafromLS = () => {
@@ -21,7 +22,8 @@ export const ViewData = () => {
   //     });
   //     setData(filteredData);
   //   };
-
+    useEffect(() => { getDatafromLS();
+    }, []);
   const handleRemoveAll = (e) => {
     localStorage.removeItem("data");
   };
@@ -93,7 +95,8 @@ export const ViewData = () => {
                     <span className="mx-2">{doc.budget}</span>
                   </li>
                 </ul>
-
+                
+                
                 {/* <td>
                           <button
                             onClick={() => deleteData(data.isbn)}
@@ -107,7 +110,8 @@ export const ViewData = () => {
             ))}
           </div>
         </div>
-
+      
+    
         <button
           className="btn btn-danger btn-md my-3"
           onClick={(event) => handleRemoveAll(event)}

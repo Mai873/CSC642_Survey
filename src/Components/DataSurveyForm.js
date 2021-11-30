@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { View, ViewData } from "./ViewData";
 import Recaptcha from "react-google-recaptcha";
+import googleMap from "./googleMap";
 // import { Link } from "react-router-dom";
 // import "";
 
@@ -381,7 +382,9 @@ export const DataSurveyForm = () => {
                 verifyCallback={verifyCallback}
               />
             </div>
-            <input type="submit" className="btn btn-primary my-2" />
+            <input type="submit" className="btn btn-primary my-2" 
+            onClick={() => window.location.reload()}/>
+            
             {/* <a className="btn btn-outline-primary mx-2">View Data</a> */}
             <button
               type="button"
