@@ -50,16 +50,6 @@ export const DataSurveyForm = () => {
     setBudget(event.target.value);
   };
 
-  // useEffect(() => {
-  //   // storing input name
-  //   // console.log(errors, "llllllll");
-  //   if (Object.keys(errors).length === 0 && isSubmit) {
-  //     // alert("You have successfully subscribed!");
-  //     console.log(data, "hi data");
-  //     // setIsSubmit(true);
-  //   }
-  // }, [errors]);
-
   const validate = (values) => {
     const error = {};
     var pattern = new RegExp(/^[0-9\b]+$/);
@@ -110,7 +100,7 @@ export const DataSurveyForm = () => {
 
     setErrors(validate(val));
 
-    setData([...data, val]);
+    setData({ ...data, val });
 
     setIsSubmit(true);
     // setErrors({});
@@ -144,12 +134,12 @@ export const DataSurveyForm = () => {
 
   return (
     <>
-      <div className="container my-5" style={{ width: "100%" }}>
+      <div className='container my-5' style={{ width: "100%" }}>
         <>
           <form
-            className="mx-auto border"
+            className='mx-auto border'
             onSubmit={(event) => handleSubmit(event)}
-            autoComplete="off"
+            autoComplete='off'
             style={{
               width: "100%",
               maxWidth: "700px",
@@ -159,64 +149,64 @@ export const DataSurveyForm = () => {
               borderRadius: "25px",
             }}
           >
-            <h1 className="text-center">Data Survey</h1>
-            <div className="">
-              <div className="mb-3">
-                <label for="exampleFormControlInput1" className="form-label">
+            <h1 className='text-center'>Data Survey</h1>
+            <div className=''>
+              <div className='mb-3'>
+                <label for='exampleFormControlInput1' className='form-label'>
                   First Name
                 </label>
                 <input
-                  type="text"
+                  type='text'
                   value={fname}
                   onChange={(e) => setFname(e.target.value)}
-                  className="form-control"
-                  id="exampleFormControlInput1"
-                  placeholder="First Name"
+                  className='form-control'
+                  id='exampleFormControlInput1'
+                  placeholder='First Name'
                   required
                 />
                 <p style={{ color: "red" }}>{errors.fname}</p>
               </div>
-              <div className="mb-3">
-                <label for="exampleFormControlInput1" className="form-label">
+              <div className='mb-3'>
+                <label for='exampleFormControlInput1' className='form-label'>
                   Last Name
                 </label>
                 <input
-                  type="text"
-                  className="form-control"
+                  type='text'
+                  className='form-control'
                   value={lname}
                   onChange={(e) => setlname(e.target.value)}
-                  id="exampleFormControlInput1"
-                  placeholder="Last Name"
+                  id='exampleFormControlInput1'
+                  placeholder='Last Name'
                   required
                 />
                 <p style={{ color: "red" }}>{errors.lname}</p>
               </div>
             </div>
-            <div className="">
-              <div className="mb-3">
-                <label for="exampleFormControlInput1" className="form-label">
+            <div className=''>
+              <div className='mb-3'>
+                <label for='exampleFormControlInput1' className='form-label'>
                   Email
                 </label>
 
                 <input
-                  type="email"
-                  className="form-control"
+                  type='email'
+                  className='form-control'
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  id="exampleFormControlInput1"
-                  placeholder="somene@example.com"
+                  id='exampleFormControlInput1'
+                  placeholder='somene@example.com'
                   required
                 />
                 <p style={{ color: "red" }}>{errors.email}</p>
               </div>
-              <div className="mb-3">
-                <label for="exampleFormControlInput1" className="form-label">
+              <div className='mb-3'>
+                <label for='exampleFormControlInput1' className='form-label'>
                   Phone No
                 </label>
                 <input
-                  type="tel"
-                  className="form-control"
-                  id="exampleFormControlInput1"
+                  type='tel'
+                  className='form-control'
+                  id='exampleFormControlInput1'
                   value={contact}
                   onChange={(e) => setContact(e.target.value)}
                   //   placeholder="123-45-678"
@@ -226,147 +216,147 @@ export const DataSurveyForm = () => {
                 <p style={{ color: "red" }}>{errors.contact}</p>
               </div>
             </div>
-            <label for="exampleFormControlInput1" className="form-label">
+            <label for='exampleFormControlInput1' className='form-label'>
               Title
             </label>
-            <div className="mb-3">
-              <div className="form-check form-check-inline">
+            <div className='mb-3'>
+              <div className='form-check form-check-inline'>
                 <input
-                  className="form-check-input"
-                  type="radio"
-                  name="inlineRadioOptions"
-                  id="inlineRadio1"
-                  value="None"
+                  className='form-check-input'
+                  type='radio'
+                  name='inlineRadioOptions'
+                  id='inlineRadio1'
+                  value='None'
                   onChange={(event) => handleRadio(event)}
                 />
-                <label className="form-check-label" for="inlineRadio1">
+                <label className='form-check-label' for='inlineRadio1'>
                   none
                 </label>
               </div>
-              <div className="form-check form-check-inline">
+              <div className='form-check form-check-inline'>
                 <input
-                  className="form-check-input"
-                  type="radio"
-                  name="inlineRadioOptions"
-                  id="inlineRadio2"
-                  value="Student"
+                  className='form-check-input'
+                  type='radio'
+                  name='inlineRadioOptions'
+                  id='inlineRadio2'
+                  value='Student'
                   onChange={(event) => handleRadio(event)}
                 />
-                <label className="form-check-label" for="inlineRadio2">
+                <label className='form-check-label' for='inlineRadio2'>
                   Student
                 </label>
               </div>
-              <div className="form-check form-check-inline">
+              <div className='form-check form-check-inline'>
                 <input
-                  className="form-check-input"
-                  type="radio"
-                  name="inlineRadioOptions"
-                  id="inlineRadio3"
-                  value="Teacher"
+                  className='form-check-input'
+                  type='radio'
+                  name='inlineRadioOptions'
+                  id='inlineRadio3'
+                  value='Teacher'
                   onChange={(event) => handleRadio(event)}
                 />
-                <label className="form-check-label" for="inlineRadio3">
+                <label className='form-check-label' for='inlineRadio3'>
                   Teacher
                 </label>
               </div>
             </div>
-            <label for="exampleFormControlInput1" className="form-label">
+            <label for='exampleFormControlInput1' className='form-label'>
               Your Height
             </label>
-            <div className="d-flex">
-              <div className="input-group mb-3 w-50">
+            <div className='d-flex'>
+              <div className='input-group mb-3 w-50'>
                 <span
-                  className="input-group-text"
-                  id="inputGroup-sizing-default"
+                  className='input-group-text'
+                  id='inputGroup-sizing-default'
                 >
                   Inches
                 </span>
                 <input
-                  type="text"
-                  className="form-control"
-                  aria-label="Sizing example input"
-                  aria-describedby="inputGroup-sizing-default"
+                  type='text'
+                  className='form-control'
+                  aria-label='Sizing example input'
+                  aria-describedby='inputGroup-sizing-default'
                   value={inches}
                   onChange={(e) => setInches(e.target.value)}
                   // required
                 />
               </div>
-              <div className="input-group mb-3 w-50 mx-2">
+              <div className='input-group mb-3 w-50 mx-2'>
                 <span
-                  className="input-group-text"
-                  id="inputGroup-sizing-default"
+                  className='input-group-text'
+                  id='inputGroup-sizing-default'
                 >
                   Feet
                 </span>
                 <input
-                  type="text"
-                  className="form-control w-50"
-                  aria-label="Sizing example input"
-                  aria-describedby="inputGroup-sizing-default"
+                  type='text'
+                  className='form-control w-50'
+                  aria-label='Sizing example input'
+                  aria-describedby='inputGroup-sizing-default'
                   value={feet}
                   onChange={(e) => setFeet(e.target.value)}
                   // required
                 />
               </div>
             </div>
-            <div className="d-flex">
+            <div className='d-flex'>
               <select
-                className="form-select w-50"
-                aria-label="Default select example"
+                className='form-select w-50'
+                aria-label='Default select example'
                 value={services}
                 onChange={(event) => handleServices(event)}
                 required
               >
                 <option selected>Check all services you require </option>
 
-                <option value="Email">Email</option>
-                <option value="Phone">Phone</option>
-                <option value="Facebook">Facebook</option>
-                <option value="Twitter">Twitter</option>
-                <option value="Surface Email">Surface Mail</option>
-                <option value="Personal Visit">Personal Visit</option>
+                <option value='Email'>Email</option>
+                <option value='Phone'>Phone</option>
+                <option value='Facebook'>Facebook</option>
+                <option value='Twitter'>Twitter</option>
+                <option value='Surface Email'>Surface Mail</option>
+                <option value='Personal Visit'>Personal Visit</option>
               </select>
 
               <select
-                className="form-select w-50 mx-2"
-                aria-label="Default select example"
+                className='form-select w-50 mx-2'
+                aria-label='Default select example'
                 value={budget}
                 onChange={(event) => handleBudget(event)}
                 required
               >
                 <option selected>Your monthly budget for services </option>
 
-                <option value="Less than $ 50">Less than $ 50</option>
-                <option value="Between $50 and $100">
+                <option value='Less than $ 50'>Less than $ 50</option>
+                <option value='Between $50 and $100'>
                   Between $50 and $100
                 </option>
-                <option value="Above $100">Above $100</option>
+                <option value='Above $100'>Above $100</option>
               </select>
             </div>
-            <div className="mb-3 my-2">
-              <label for="exampleFormControlTextarea1" className="form-label">
+            <div className='mb-3 my-2'>
+              <label for='exampleFormControlTextarea1' className='form-label'>
                 Address
               </label>
               <textarea
-                className="form-control"
+                className='form-control'
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
-                id="exampleFormControlTextarea1"
-                rows="3"
+                id='exampleFormControlTextarea1'
+                rows='3'
                 required
               ></textarea>
               <p style={{ color: "red" }}>{errors.address}</p>
             </div>
-            <div className="form-check my-2">
+            <div className='form-check my-2'>
               <input
-                className="form-check-input"
-                type="checkbox"
-                value=""
-                id="flexCheckChecked"
-                autoComplete="off"
+                className='form-check-input'
+                type='checkbox'
+                value=''
+                id='flexCheckChecked'
+                autoComplete='off'
                 required
               />
-              <label className="form-check-label" for="flexCheckChecked">
+              <label className='form-check-label' for='flexCheckChecked'>
                 I Agree to terms
               </label>
             </div>
@@ -376,19 +366,19 @@ export const DataSurveyForm = () => {
              */}
             <div style={{ width: "100px", paddingRight: "" }}>
               <Recaptcha
-                sitekey="6LcDz2QdAAAAAL19WPuy8oB1WJTejl0gnNEG4LuB"
-                render="explicit"
+                sitekey='6LcDz2QdAAAAAL19WPuy8oB1WJTejl0gnNEG4LuB'
+                render='explicit'
                 onloadCallback={recaptchaLoaded}
                 verifyCallback={verifyCallback}
               />
             </div>
-            <input type="submit" className="btn btn-primary my-2" />
+            <input type='submit' className='btn btn-primary my-2' />
             {/* <a className="btn btn-outline-primary mx-2">View Data</a> */}
             <button
-              type="button"
-              className="btn btn-outline-primary my-2 mx-2"
-              data-bs-toggle="modal"
-              data-bs-target="#exampleModal"
+              type='button'
+              className='btn btn-outline-primary my-2 mx-2'
+              data-bs-toggle='modal'
+              data-bs-target='#exampleModal'
               style={{ position: "relative", top: "", left: "" }}
             >
               View Data
@@ -398,17 +388,39 @@ export const DataSurveyForm = () => {
       </div>
 
       <div
-        className="modal fade"
-        id="exampleModal"
-        tabindex="-1"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
+        className='modal fade'
+        id='exampleModal'
+        tabindex='-1'
+        aria-labelledby='exampleModalLabel'
+        aria-hidden='true'
       >
-        <div className="modal-dialog" style={{ maxWidth: "600px" }}>
-          <div className="modal-content" style={{ borderRadius: "25px" }}>
-            {data.length > 0 && <ViewData data={data} />}
-            {data.length < 1 && (
-              <div className="p-5">No Data are added yet</div>
+        <div className='modal-dialog' style={{ maxWidth: "600px" }}>
+          <div className='modal-content' style={{ borderRadius: "25px" }}>
+            {!fname ||
+            !lname ||
+            !email ||
+            !contact ||
+            !address ||
+            !title ||
+            !inches ||
+            !feet ||
+            !services ||
+            !budget ? (
+              <div className='p-5'>No Data are added yet</div>
+            ) : (
+              <ViewData
+                data={data}
+                fname={fname}
+                lname={lname}
+                email={email}
+                contact={contact}
+                address={address}
+                title={title}
+                inches={inches}
+                feet={feet}
+                services={services}
+                budget={budget}
+              />
             )}
           </div>
         </div>

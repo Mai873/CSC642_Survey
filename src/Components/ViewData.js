@@ -11,9 +11,20 @@ const getDatafromLS = () => {
   }
 };
 
-export const ViewData = () => {
-  const [fname, setFname] = useState("");
-  const [lname, setlname] = useState("");
+export const ViewData = ({
+  fname,
+  lname,
+  email,
+  contact,
+  address,
+  inches,
+  feet,
+  title,
+  services,
+  budget,
+}) => {
+  // const [fname, setFname] = useState("");
+  // const [lname, setlname] = useState("");
   const [data, setData] = useState(getDatafromLS());
 
   //   const deleteData = (isbn) => {
@@ -22,15 +33,16 @@ export const ViewData = () => {
   //     });
   //     setData(filteredData);
   //   };
-    useEffect(() => { getDatafromLS();
-    }, []);
+  useEffect(() => {
+    getDatafromLS();
+  }, []);
   const handleRemoveAll = (e) => {
     localStorage.removeItem("data");
   };
   return (
-    <div className="" style={{}}>
+    <div className='' style={{}}>
       <form
-        className="mx-auto border"
+        className='mx-auto border'
         style={{
           boxShadow: " 2px 2px 20px rgba(0, 0, 0, 0.5)",
           background: "#fff",
@@ -40,83 +52,66 @@ export const ViewData = () => {
           borderRadius: "25px",
         }}
       >
-        <div className="table-responsive">
-          <h1 className="fw-bold text-center mb-5">Survey Data</h1>
-
+        <div className='table-responsive'>
+          <h1 className='fw-bold text-center mb-5'>Survey Data</h1>
           <div>
-            {data.slice(0, 1).map((doc) => (
-              <div
-                className="mx-auto text-center"
-                style={{ borderBottom: "1px solid black", width: "100%" }}
+            <div
+              className='mx-auto text-center'
+              style={{ borderBottom: "1px solid black", width: "100%" }}
+            >
+              <ul
+                className='list-group list-group-flush'
+                style={{ textAlign: "justify" }}
               >
-                <ul
-                  className="list-group list-group-flush"
-                  style={{ textAlign: "justify" }}
-                >
-                  <li className="list-group-item">
-                    <label className="fw-bold">First Name :</label>
-                    <span className="mx-2">{doc.fname}</span>
-                  </li>
+                <li className='list-group-item'>
+                  <label className='fw-bold'>First Name :</label>
+                  <span className='mx-2'>{fname}</span>
+                </li>
 
-                  <li className="list-group-item">
-                    <label className="fw-bold">Last Name :</label>
-                    <span className="mx-2">{doc.lname}</span>
-                  </li>
-                  <li className="list-group-item">
-                    <label className="fw-bold">Last Name :</label>
-                    <span className="mx-2">{doc.email}</span>
-                  </li>
-                  <li className="list-group-item">
-                    <label className="fw-bold">Email :</label>
-                    <span className="mx-2">{doc.contact}</span>
-                  </li>
-                  <li className="list-group-item">
-                    <label className="fw-bold">Address :</label>
-                    <span className="mx-2">{doc.address}</span>
-                  </li>
-                  <li className="list-group-item">
-                    <label className="fw-bold">Height(inches) :</label>
-                    <span className="mx-2">{doc.inches}</span>
-                  </li>
-                  <li className="list-group-item">
-                    <label className="fw-bold">Height (feet) :</label>
-                    <span className="mx-2">{doc.feet}</span>
-                  </li>
-                  <li className="list-group-item">
-                    <label className="fw-bold">Title :</label>
-                    <span className="mx-2">{doc.title}</span>
-                  </li>
-                  <li className="list-group-item">
-                    <label className="fw-bold">Service :</label>
-                    <span className="mx-2">{doc.services}</span>
-                  </li>
-                  <li className="list-group-item">
-                    <label className="fw-bold">Budget :</label>
-                    <span className="mx-2">{doc.budget}</span>
-                  </li>
-                </ul>
-                <GoogleMap
-                  isActive={"map-container"}
-                  mapAddress={doc.address}
-                />
-
-                {/* <td>
-                          <button
-                            onClick={() => deleteData(data.isbn)}
-                            className="btn btn-danger"
-                          >
-                            Delete
-                          </button>
-                         
-                        </td> */}
-              </div>
-            ))}
+                <li className='list-group-item'>
+                  <label className='fw-bold'>Last Name :</label>
+                  <span className='mx-2'>{lname}</span>
+                </li>
+                <li className='list-group-item'>
+                  <label className='fw-bold'>Email:</label>
+                  <span className='mx-2'>{email}</span>
+                </li>
+                <li className='list-group-item'>
+                  <label className='fw-bold'>Contact :</label>
+                  <span className='mx-2'>{contact}</span>
+                </li>
+                <li className='list-group-item'>
+                  <label className='fw-bold'>Address :</label>
+                  <span className='mx-2'>{address}</span>
+                </li>
+                <li className='list-group-item'>
+                  <label className='fw-bold'>Height(inches) :</label>
+                  <span className='mx-2'>{inches}</span>
+                </li>
+                <li className='list-group-item'>
+                  <label className='fw-bold'>Height (feet) :</label>
+                  <span className='mx-2'>{feet}</span>
+                </li>
+                <li className='list-group-item'>
+                  <label className='fw-bold'>Title :</label>
+                  <span className='mx-2'>{title}</span>
+                </li>
+                <li className='list-group-item'>
+                  <label className='fw-bold'>Service :</label>
+                  <span className='mx-2'>{services}</span>
+                </li>
+                <li className='list-group-item'>
+                  <label className='fw-bold'>Budget :</label>
+                  <span className='mx-2'>{budget}</span>
+                </li>
+              </ul>
+              <GoogleMap isActive={"map-container"} mapAddress={address} />
+            </div>
           </div>
         </div>
-      
-    
+
         <button
-          className="btn btn-danger btn-md my-3"
+          className='btn btn-danger btn-md my-3'
           onClick={(event) => handleRemoveAll(event)}
         >
           Remove All
